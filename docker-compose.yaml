@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Microservicio de gestión de usuarios
+  gestion-usuarios:
+    build: ./user-microservice
+    ports:
+      - "8081:8081"
+    networks:
+      - microservicios-network
+
+  # Microservicio de gestión de canchas
+  gestion-canchas:
+    build: ./fields-microservice
+    ports:
+      - "8082:8082"
+    networks:
+      - microservicios-network
+
+  # Microservicio de gestión de pagos
+  gestion-pagos:
+    build: ./payments-api
+    ports:
+      - "3000:3000"
+    networks:
+      - microservicios-network
+    env_file:
+      - ./payments-api/api.env
+
+  # Microservicio de gestión de reservas
+  gestion-reservas:
+    build: ./reservations-microservice
+    ports:
+      - "8000:8000"
+    networks:
+      - microservicios-network
+
+  # Microservicio Orquestador
+  orquestador:
+    build: ./orquestador
+    ports:
+      - "8080:8080"
+    networks:
+      - microservicios-network
+    depends_on:
+      - gestion-usuarios
+      - gestion-canchas
+      - gestion-pagos
+      - gestion-reservas
+
+networks:
+  microservicios-network:
+    driver: bridge
