@@ -41,3 +41,7 @@ Para el despliegue, se utiliza Docker para la contenedorización de cada uno de 
 - **Java Spring Boot** para los microservicios de usuarios, orquestador.
 - **Python FastAPI** para el microservicio de reservas.
 - **MongoDB**, **PostgreSQL** y **MySQL** como bases de datos.
+
+## Presentación de Canvas
+
+- https://www.canva.com/design/DAGS3LlYo-A/yeFoNuj2xKEiEYdbH2Zohg/edit
