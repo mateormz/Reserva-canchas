@@ -21,8 +21,8 @@ El sistema está dividido en los siguientes microservicios:
 
 5. **Payments API** - [Repositorio](https://github.com/joelm2405/payments-api)
    - Gestiona los métodos de pago y los pagos realizados por los usuarios.
-
-Cada uno de estos microservicios se implementa y documenta individualmente en sus respectivos repositorios. Además, un archivo `Dockerfile` está incluido en el repositorio para facilitar la creación de contenedores de Docker para los microservicios.
+  
+5. **Front-end** - [Repositorio](https://github.com/mateormz/Reserva-canchas-front)
 
 ## Despliegue
 
